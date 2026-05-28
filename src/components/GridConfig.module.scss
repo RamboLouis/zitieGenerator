@@ -1,0 +1,90 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.gridConfig {
+  background: white;
+  border: 1px solid $border;
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 12px;
+}
+
+.sectionTitle {
+  @include section-title;
+}
+
+.gridTypes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.gridTypeBtn {
+  padding: 6px 0;
+  border: 1px solid $border;
+  border-radius: 6px;
+  background: white;
+  font-size: 13px;
+  color: $text;
+  cursor: pointer;
+  transition: all 0.15s;
+
+  &:hover {
+    border-color: $primary;
+  }
+
+  &.active {
+    background: $primary;
+    border-color: $primary;
+    color: white;
+  }
+}
+
+.sliderRow {
+  @include flex-between;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+
+.sliderLabel {
+  font-size: 13px;
+  color: $text-light;
+  flex-shrink: 0;
+}
+
+.sliderValue {
+  font-size: 13px;
+  font-weight: 600;
+  color: $text;
+  min-width: 36px;
+  text-align: right;
+}
+
+input[type='range'] {
+  flex: 1;
+  height: 4px;
+  accent-color: $primary;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: $text;
+  cursor: pointer;
+
+  input[type='checkbox'] {
+    width: 16px;
+    height: 16px;
+    accent-color: $primary;
+  }
+}

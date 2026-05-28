@@ -1,0 +1,42 @@
+@use 'variables' as *;
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin scrollbar {
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
+  }
+}
+
+@mixin label {
+  display: block;
+  font-size: 13px;
+  color: $text-light;
+  margin-bottom: 4px;
+}
+
+@mixin section-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: $text;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid $border;
+}

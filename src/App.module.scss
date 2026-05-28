@@ -1,0 +1,17 @@
+@use './styles/variables' as *;
+
+.app {
+  display: flex;
+  height: 100vh;
+  background: $bg;
+}
+
+.configPanel {
+  flex-shrink: 0;
+}
+
+.previewArea {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+}

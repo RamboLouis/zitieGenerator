@@ -1,0 +1,53 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.panel {
+  width: $panel-width;
+  height: 100vh;
+  background: $panel-bg;
+  border-right: 1px solid $border;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.header {
+  padding: $panel-padding;
+  border-bottom: 1px solid $border;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 700;
+  color: $text;
+  margin: 0;
+}
+
+.body {
+  flex: 1;
+  overflow-y: auto;
+  padding: $panel-padding;
+  @include scrollbar;
+}
+
+.footer {
+  padding: $panel-padding;
+  border-top: 1px solid $border;
+}
+
+.printBtn {
+  width: 100%;
+  padding: 10px;
+  background: $primary;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+
+  &:hover {
+    background: $primary-hover;
+  }
+}

@@ -1,0 +1,48 @@
+@use '../styles/variables' as *;
+
+.cell {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.pinyinCell {
+  display: block;
+  box-sizing: border-box;
+  text-align: center;
+  color: $text;
+  overflow: hidden;
+}
+
+.charCell {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  border: solid #ccc;
+  overflow: hidden;
+}
+
+.gridBg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+
+.char {
+  position: relative;
+  z-index: 2;
+  display: block;
+  text-align: center;
+  color: $text;
+  user-select: none;
+  overflow: hidden;
+
+  &.trace {
+    color: $trace-color;
+  }
+}

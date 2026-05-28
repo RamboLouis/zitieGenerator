@@ -1,0 +1,146 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.preview {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  background: white;
+  border-bottom: 1px solid $border;
+  flex-shrink: 0;
+  min-height: 40px;
+}
+
+.toolbarLeft {
+  display: flex;
+  gap: 12px;
+}
+
+.stat {
+  font-size: 13px;
+  color: $text-light;
+}
+
+.toolbarRight {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pageSize {
+  font-size: 13px;
+  color: $text-light;
+}
+
+.divider {
+  width: 1px;
+  height: 16px;
+  background: $border;
+  margin: 0 4px;
+}
+
+.zoomBtn {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $border;
+  border-radius: 6px;
+  background: white;
+  color: $text;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.15s;
+  padding: 0;
+
+  &:hover {
+    border-color: $primary;
+    color: $primary;
+  }
+
+  &:last-child {
+    width: auto;
+    padding: 0 10px;
+    font-size: 12px;
+  }
+}
+
+.zoomValue {
+  font-size: 13px;
+  font-weight: 600;
+  color: $text;
+  min-width: 40px;
+  text-align: center;
+}
+
+.canvas {
+  flex: 1;
+  overflow: auto;
+  @include scrollbar;
+  // checkerboard grid background
+  background-color: #f0f0f0;
+  background-image:
+    linear-gradient(45deg, #e8e8e8 25%, transparent 25%),
+    linear-gradient(-45deg, #e8e8e8 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #e8e8e8 75%),
+    linear-gradient(-45deg, transparent 75%, #e8e8e8 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0;
+}
+
+.pageList {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  transform-origin: top center;
+}
+
+.printPage {
+  background: white;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.gridContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.gridRow {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.cellWrapper {
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+.empty {
+  @include flex-center;
+  flex-direction: column;
+  flex: 1;
+  color: $text-muted;
+  font-size: 14px;
+}
+
+.emptyIcon {
+  font-size: 48px;
+  margin-bottom: 12px;
+  opacity: 0.3;
+}

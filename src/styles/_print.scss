@@ -1,0 +1,45 @@
+@media print {
+  @page {
+    margin: 0;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: white;
+  }
+
+  .config-panel {
+    display: none !important;
+  }
+
+  .preview-area {
+    width: 100% !important;
+    max-width: none !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    background: white !important;
+  }
+
+  .preview-scaler {
+    transform: none !important;
+    width: 100% !important;
+  }
+
+  .print-page {
+    box-shadow: none !important;
+    margin: 0 !important;
+    page-break-after: always;
+    break-after: page;
+
+    &:last-child {
+      page-break-after: auto;
+      break-after: auto;
+    }
+  }
+
+  .page-stats,
+  .print-button-wrapper {
+    display: none !important;
+  }
+}
